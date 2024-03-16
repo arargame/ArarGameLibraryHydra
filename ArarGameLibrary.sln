@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArarGameLibrary", "ArarGameLibrary.csproj", "{B43C717B-38B3-4758-A99F-8916D2777396}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopHydra", "..\DesktopHydra\DesktopHydra.csproj", "{1D6B816C-41FA-4118-9693-B881FBD8E656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B43C717B-38B3-4758-A99F-8916D2777396}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B43C717B-38B3-4758-A99F-8916D2777396}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B43C717B-38B3-4758-A99F-8916D2777396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6B816C-41FA-4118-9693-B881FBD8E656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6B816C-41FA-4118-9693-B881FBD8E656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6B816C-41FA-4118-9693-B881FBD8E656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6B816C-41FA-4118-9693-B881FBD8E656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

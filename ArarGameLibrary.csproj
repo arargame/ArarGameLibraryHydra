@@ -1,10 +1,64 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\CppNet.dll" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\libmojoshader_64.dll" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\mgfxc" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\mgfxc.deps.json" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\mgfxc.dll" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\mgfxc.pdb" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\mgfxc.runtimeconfig.json" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\SharpDX.D3DCompiler.dll" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\SharpDX.D3DCompiler.xml" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\SharpDX.dll" />
+    <Content Remove="C:\Users\ararg\.nuget\packages\monogame.framework.content.pipeline\3.8.1.303\contentFiles\any\net6.0\SharpDX.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="LibraryContent\Fonts\DefaultFont.xnb" />
+    <None Remove="LibraryContent\Fonts\LindseyFont.xnb" />
+    <None Remove="LibraryContent\Fonts\MenuFont.xnb" />
+    <None Remove="LibraryContent\Libraries\LogManagement.dll" />
+    <None Remove="LibraryContent\Libraries\ValueHistoryManagement.dll" />
+    <None Remove="LibraryContent\Textures\lightDrop.xnb" />
+    <None Remove="LibraryContent\Textures\SmilemanLogo.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LibraryContent\Fonts\DefaultFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryContent\Fonts\LindseyFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryContent\Fonts\MenuFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryContent\Libraries\LogManagement.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryContent\Libraries\ValueHistoryManagement.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryContent\Textures\lightDrop.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LibraryContent\Textures\SmilemanLogo.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.Content.Pipeline" Version="3.8.1.303" />
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="LogManagement">
+      <HintPath>LibraryContent\Libraries\LogManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="ValueHistoryManagement">
+      <HintPath>LibraryContent\Libraries\ValueHistoryManagement.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
