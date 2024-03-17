@@ -1,12 +1,13 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using ArarGameLibrary.Effect;
+using ArarGameLibrary.Manager;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using ArarGameLibrary.Manager;
-using ArarGameLibrary.Effect;
 
 namespace ArarGameLibrary.Model
 {
@@ -122,7 +123,7 @@ namespace ArarGameLibrary.Model
             });
 
 
-            GetEvent<PulsateEffect>().SetWhenToInvoke(() =>
+            GetEvent<PulsateEffect>().SetWhenToInvoke(() => 
             {
                 return State == PieceState.Selected;
             });
@@ -236,7 +237,7 @@ namespace ArarGameLibrary.Model
 
         public Piece MakeNest(Texture2D texture, Color color)
         {
-            //  SetBackgroundTexture(null);
+          //  SetBackgroundTexture(null);
 
             SetTexture(texture);
             SetColor(color);
@@ -247,7 +248,7 @@ namespace ArarGameLibrary.Model
             return this;
         }
 
-        public Piece MakeImage(int imageNumber, Texture2D texture)
+        public Piece MakeImage(int imageNumber,Texture2D texture) 
         {
             SetImageNumber(imageNumber);
 
@@ -307,9 +308,9 @@ namespace ArarGameLibrary.Model
 
         public Piece Unselect()
         {
-            if (!HasType(PieceType.Empty) && !HasType(PieceType.Nest))
+            if(!HasType(PieceType.Empty) && !HasType(PieceType.Nest))
             {
-                if (State == PieceState.Selected)
+                if(State == PieceState.Selected)
                 {
                     State = PieceState.UnSelected;
 
@@ -412,7 +413,7 @@ namespace ArarGameLibrary.Model
 
             //return Number + " - " + string.Join(",", Types.Select(t=>t.ToString())); 
 
-            return text ?? string.Format("({0},{1})={2}", RowNumber, ColumnNumber, Number);//$"({RowNumber},{ColumnNumber})={Number}";
+            return text ?? string.Format("({0},{1})={2}",RowNumber,ColumnNumber,Number);//$"({RowNumber},{ColumnNumber})={Number}";
 
             //return text ?? $"{ImageNumber}";
         }
@@ -426,7 +427,7 @@ namespace ArarGameLibrary.Model
 
 
 
-        public Piece SetRowAndColumnNumber(int rowNumber, int columnNumber)
+        public Piece SetRowAndColumnNumber(int rowNumber,int columnNumber)
         {
             RowNumber = rowNumber;
 
@@ -528,7 +529,7 @@ namespace ArarGameLibrary.Model
                     array[i, k] = new Piece()
                                         .SetPosition(piecePosition)
                                         .SetSize(pieceSize)
-                                        .SetTexture(TextureManager.CreateTexture2DByRandomColor(1, 1))
+                                        .SetTexture(TextureManager.CreateTexture2DByRandomColor(1,1))
                                         .SetColor(Color.White)
                                         .SetRowAndColumnNumber(i, k)
                                         .SetNumber(number)
@@ -551,7 +552,7 @@ namespace ArarGameLibrary.Model
                                 .SetState(previous.State)
                                 .SetTexture(previous.Texture)
                                 .AddType(previous.Types.ToArray());
-
+                                
 
             newPiece.LoadContent();
 

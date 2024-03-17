@@ -112,7 +112,10 @@ namespace ArarGameLibrary.ScreenManagement
         {
             ScreenState = ScreenState.Inactive;
 
-            ScreenManager.Add(newScreen);
+            if (newScreen != null)
+            {
+                ScreenManager.Add(newScreen);
+            }
         }
 
         public IScreen Freeze(IScreen newScreen)

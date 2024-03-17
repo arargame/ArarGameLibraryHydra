@@ -1,15 +1,19 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArarGameLibrary.Effect;
+﻿using ArarGameLibrary.Effect;
 using ArarGameLibrary.Manager;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Text;
 
 namespace ArarGameLibrary.Model
 {
+    //    font = new Font(text: "HELllow", color: Color.Coral, scale: 4f, position: new Vector2(400, 10), isPulsating: true);
+    //font.SetDragable(true);
+    //font.SetChangeTextEvent(() => 
+    //{
+    //    return font.Scale.ToString("0.0");
+    //});
+
     public class Font : Sprite
     {
         public static Font Default { get; set; }
@@ -41,7 +45,7 @@ namespace ArarGameLibrary.Model
             rootDirectory = rootDirectory ?? "LibraryContent";
 
             SpriteFont = Global.Content(rootDirectory).Load<SpriteFont>(fontFile);
-
+            
             SetText(text);
 
             SetPosition(position ?? Vector2.Zero);
@@ -212,9 +216,9 @@ namespace ArarGameLibrary.Model
 
             return this;
         }
+        
 
-
-        public static void Draw(string text, Vector2 position, Color color, Func<string> changeTextEvent = null)
+        public static void Draw(string text, Vector2 position, Color color,Func<string> changeTextEvent = null)
         {
             if (Default == null)
                 Default = new Font(text: text, position: position, fontColor: color, changeTextEvent: changeTextEvent);

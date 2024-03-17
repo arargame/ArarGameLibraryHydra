@@ -1,12 +1,11 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using ArarGameLibrary.Manager;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using ArarGameLibrary.Manager;
 
 namespace ArarGameLibrary.Model
 {
@@ -20,7 +19,7 @@ namespace ArarGameLibrary.Model
 
         //public AnimationFrame Next { get; set; }
 
-        public AnimationFrame(Animation animation, int number)
+        public AnimationFrame(Animation animation,int number)
         {
             Animation = animation;
 
@@ -89,7 +88,7 @@ namespace ArarGameLibrary.Model
 
             ColumnCount = columnCount;
 
-            Interval = (float)1 / (rowCount * columnCount);
+            Interval = (float)1/(rowCount*columnCount);
         }
 
         public override void Initialize()
@@ -113,7 +112,7 @@ namespace ArarGameLibrary.Model
                 {
                     Image image = new Image(Texture);
 
-                    image.SetRowAndColumnCount(RowCount, ColumnCount);
+                    image.SetRowAndColumnCount(RowCount,ColumnCount);
 
                     var piece = image.Pieces.FirstOrDefault(p => p.ImageNumber == frameNumber);
 
@@ -133,7 +132,7 @@ namespace ArarGameLibrary.Model
                 }
             }
 
-            Frames.ToList().ForEach(f => f.SetPosition(Position));
+            Frames.ToList().ForEach(f=>f.SetPosition(Position));
 
             ActiveFrame = Frames.First();
 

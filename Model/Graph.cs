@@ -1,5 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using ArarGameLibrary.Manager;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ArarGameLibrary.Model
 {
-    public class Graph : Sprite
+    public class Graph : Sprite 
     {
         public List<Line> Lines { get; set; }
 
@@ -20,7 +21,7 @@ namespace ArarGameLibrary.Model
 
         public List<Line> FillingLines { get; set; }
 
-        public Color LinesColor
+        public Color LinesColor 
         {
             get
             {

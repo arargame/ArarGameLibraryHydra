@@ -1,15 +1,15 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using ArarGameLibrary.Manager;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ArarGameLibrary.Manager;
 
 namespace ArarGameLibrary.Model
-{
-    public class Image : Sprite, IPieceContainer
+{   
+    public class Image : Sprite,IPieceContainer
     {
         public int RowCount { get; set; }
 
@@ -21,8 +21,8 @@ namespace ArarGameLibrary.Model
         {
             SetTexture(texture);
         }
-
-        public Image(string name)
+        
+        public Image(string name) 
         {
             SetName(name);
         }
@@ -37,14 +37,14 @@ namespace ArarGameLibrary.Model
         public override void LoadContent(Texture2D texture = null)
         {
             SetTexture(Name);
-            SetSize(new Vector2(Texture.Width, Texture.Height));
+            SetSize(new Vector2(Texture.Width,Texture.Height));
         }
 
         public override void Update(GameTime gameTime = null)
         {
             if (Pieces.Count > 0)
                 Pieces.ForEach(p => p.Update());
-            else
+            else 
                 base.Update();
         }
 
@@ -62,7 +62,7 @@ namespace ArarGameLibrary.Model
             return SetRowAndColumnCount(pieceCount, pieceCount);
         }
 
-        public Image SetRowAndColumnCount(int rowCount, int columnCount)
+        public Image SetRowAndColumnCount(int rowCount,int columnCount)
         {
             RowCount = rowCount;
 
@@ -91,7 +91,7 @@ namespace ArarGameLibrary.Model
         }
 
 
-        public Image SetPiecePosition(Vector2? startingPoint = null)
+        public Image SetPiecePosition(Vector2? startingPoint=null)
         {
             startingPoint = startingPoint ?? Position;
 
